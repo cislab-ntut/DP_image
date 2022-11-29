@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 def laplaceMechanism(img, x, y, epsilon=1):
     # Flatten the img
     img = img.reshape(x * y)
-    # Generate lap+ noise mask
+    # Generate laplace noise mask
     dp_noise = np.random.laplace(0, 1.0/epsilon, (x * y)).round() % 256 # round # mod 256
     img_out = (img + dp_noise) % 256 # round
     # Reshape to origin form
